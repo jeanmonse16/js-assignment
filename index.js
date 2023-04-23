@@ -13,8 +13,8 @@ function computerPlay () {
    return playOptions[playSelection]
 }
 
-function playerPlay () {
-    let play = prompt('Please choose Rock, Paper or Scissors')
+function playerPlay (round) {
+    let play = prompt(`round ${round}! Please choose Rock, Paper or Scissors`)
     return play
 }
 
@@ -118,7 +118,7 @@ function game () {
     let computerWinCount = 0
 
     for (let i = 0; i < ROUNDS; i++) {
-        const playerSelection = playerPlay()
+        const playerSelection = playerPlay(i + 1)
         const roundResult = playRound(playerSelection, computerPlay())
         
         if (roundResult === DRAW) 
